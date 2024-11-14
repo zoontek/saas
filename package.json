@@ -1,0 +1,62 @@
+{
+  "name": "saas",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.13.1",
+  "engines": {
+    "node": "22.11.0",
+    "pnpm": "9.13.1"
+  },
+  "scripts": {
+    "build": "rsbuild build",
+    "check": "prettier '**/*' -u -c",
+    "dev": "NODE_ENV=development tsx server",
+    "format": "prettier '**/*' -u -w",
+    "start": "NODE_ENV=production tsx server",
+    "lint": "eslint src/**/*.{ts,tsx}"
+  },
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ]
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "webpack"
+      ]
+    }
+  },
+  "dependencies": {
+    "@fastify/compress": "8.0.1",
+    "@fastify/middie": "9.0.2",
+    "@fastify/static": "8.0.2",
+    "@griffel/react": "1.5.27",
+    "close-with-grace": "2.1.0",
+    "fastify": "5.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.26.0",
+    "@babel/preset-react": "7.25.9",
+    "@eslint/js": "9.14.0",
+    "@griffel/webpack-extraction-plugin": "0.5.7",
+    "@griffel/webpack-loader": "2.2.16",
+    "@rsbuild/core": "1.1.0",
+    "@rsbuild/plugin-react": "1.0.7",
+    "@types/eslint__js": "8.42.3",
+    "@types/node": "22.9.0",
+    "@types/react": "18.3.12",
+    "@types/react-dom": "18.3.1",
+    "eslint": "9.14.0",
+    "eslint-plugin-react-compiler": "19.0.0-beta-a7bf2bd-20241110",
+    "eslint-plugin-react-hooks": "5.0.0",
+    "prettier": "3.3.3",
+    "prettier-plugin-organize-imports": "4.1.0",
+    "tsx": "4.19.2",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.14.0"
+  }
+}
