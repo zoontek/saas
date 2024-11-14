@@ -28,7 +28,6 @@ export default [
     },
   },
   {
-    name: "react-compiler/recommended",
     plugins: {
       "react-compiler": reactCompiler,
     },
