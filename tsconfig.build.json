@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "exclude": ["src/client"],
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ESNext",
+    "lib": ["ESNext"],
+    "moduleResolution": "Node",
+    "outDir": "dist",
+
+    "declaration": true,
+    "noEmit": false,
+    "noEmitOnError": true,
+    "pretty": true,
+    "sourceMap": true
+  }
+}

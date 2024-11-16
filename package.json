@@ -1,20 +1,19 @@
 {
   "name": "saas",
-  "type": "module",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@9.13.1",
+  "packageManager": "pnpm@9.13.2",
   "engines": {
     "node": "22.11.0",
-    "pnpm": "9.13.1"
+    "pnpm": "^9.13.2"
   },
   "scripts": {
-    "build": "rsbuild build",
+    "build": "rsbuild build && tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json && rm -rf dist/client dist/tsconfig.build.tsbuildinfo",
     "check": "prettier '**/*' -u -c",
-    "dev": "NODE_ENV=development tsx server",
     "format": "prettier '**/*' -u -w",
-    "start": "NODE_ENV=production tsx server",
-    "lint": "eslint src/**/*.{ts,tsx}"
+    "lint": "eslint src/**/*.{ts,tsx}",
+    "dev": "NODE_ENV=development tsx src/server/app",
+    "start": "NODE_ENV=production node dist/server/app"
   },
   "prettier": {
     "plugins": [
@@ -55,6 +54,7 @@
     "eslint-plugin-react-hooks": "5.0.0",
     "prettier": "3.3.3",
     "prettier-plugin-organize-imports": "4.1.0",
+    "tsc-alias": "1.8.10",
     "tsx": "4.19.2",
     "typescript": "5.6.3",
     "typescript-eslint": "8.14.0"

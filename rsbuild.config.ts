@@ -16,7 +16,7 @@ export default defineConfig(({ env }) => ({
       },
       source: {
         entry: {
-          index: "./src/index.client.tsx",
+          index: "./src/client/root.client.tsx",
         },
       },
     },
@@ -29,7 +29,7 @@ export default defineConfig(({ env }) => ({
       },
       source: {
         entry: {
-          index: "./src/index.server.tsx",
+          index: "./src/client/root.server.tsx",
         },
       },
     },

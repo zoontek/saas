@@ -1,5 +1,5 @@
 {
-  "include": ["src", "server.ts"],
+  "include": ["src"],
   "compilerOptions": {
     "module": "ESNext",
     "target": "ESNext",
@@ -7,24 +7,24 @@
     "jsx": "react-jsx",
     "moduleResolution": "Bundler",
 
-    "allowJs": true,
+    "allowJs": false,
     "strict": true,
     "noEmit": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
     "skipLibCheck": true,
+    "incremental": true,
     "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
 
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": true,
+    "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
 
-    "allowImportingTsExtensions": true,
-    "useDefineForClassFields": true
+    "paths": {
+      "@client/*": ["./src/client/*"],
+      "@server/*": ["./src/server/*"],
+      "@universal/*": ["./src/universal/*"]
+    }
   }
 }

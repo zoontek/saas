@@ -9,12 +9,12 @@ export default [
   js.configs.recommended,
   ...ts.configs.recommendedTypeChecked,
   {
-    ignores: ["*.js"],
+    ignores: ["rsbuild.config.ts", "*.js"],
 
     languageOptions: {
       parserOptions: {
-        projectService: true,
         tsconfigRootDir: import.meta.dirname,
+        projectService: true,
       },
     },
   },
@@ -33,6 +33,33 @@ export default [
     },
     rules: {
       "react-compiler/react-compiler": "error",
+    },
+  },
+  {
+    files: ["src/client/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        { patterns: [{ group: ["@server/*"] }] },
+      ],
+    },
+  },
+  {
+    files: ["src/server/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        { patterns: [{ group: ["@client/*"] }] },
+      ],
+    },
+  },
+  {
+    files: ["src/universal/**/*.{ts,tsx}"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        { patterns: [{ group: ["@client/*", "@server/*"] }] },
+      ],
     },
   },
 ];
